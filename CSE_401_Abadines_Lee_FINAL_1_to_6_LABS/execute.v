@@ -11,25 +11,25 @@ Execute Stage: This uses the outputs of Fetch and Decode Stages as well as combi
 and ex_mem.
 */
 module EXECUTE(
-	input		wire	[1:0]		wb_ctl,  	//11 inputs, based off of outputs of ID/EX latch (Lab 2-2)
-	input		wire	[2:0]		m_ctl,
-	input		wire				regdst, alusrc,
-	input		wire	[1:0]		aluop, 
-	input		wire	[31:0]	npcout, rdata1, rdata2, s_extendout,
-	input		wire	[4:0]		instrout_2016, instrout_1511,
-	output	wire	[1:0]		wb_ctlout,	//9 total outputs from EX/MEM latch (Lab 3-2)
-	output	wire				branch, memread, memwrite,
+	input	wire	[1:0]	wb_ctl,  	//11 inputs, based off of outputs of ID/EX latch (Lab 2-2)
+	input	wire	[2:0]	m_ctl,
+	input	wire		regdst, alusrc,
+	input	wire	[1:0]	aluop, 
+	input	wire	[31:0]	npcout, rdata1, rdata2, s_extendout,
+	input	wire	[4:0]	instrout_2016, instrout_1511,
+	output	wire	[1:0]	wb_ctlout,	//9 total outputs from EX/MEM latch (Lab 3-2)
+	output	wire		branch, memread, memwrite,
 	output	wire	[31:0]	EX_MEM_NPC,
-	output	wire				zero,
+	output	wire		zero,
 	output	wire	[31:0]	alu_result, rdata2out,
-	output	wire	[4:0]		five_bit_muxout
+	output	wire	[4:0]	five_bit_muxout
 	);
 
 	// signals
 	wire	[31:0]	adder_out, b, aluout;//internal wires to connect internal EXECUTE components together
-	wire	[4:0]		muxout;
-	wire	[2:0]		control;
-	wire				aluzero;
+	wire	[4:0]	muxout;
+	wire	[2:0]	control;
+	wire		aluzero;
 	
 	adder adder3(
 				.add_in1(npcout),
