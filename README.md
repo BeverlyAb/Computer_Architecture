@@ -9,3 +9,5 @@ Creates instances of the IF,ID, EXECUTE, MEMORY, and WB modules. The EX/MEM addr
 For the final implementation of the MIPS datapath, mem.v's memory reads from the added risc.txt file. To verify that the pipeline functions correctly, within the 24 cycles REG[1] should iterate from 1, 3, 6, and 12.  
 
 Altogether the pipeline is dynamic. The connections divvies with functionality ranging from iterator through addresses, selecting when to initiate jumps, accessing and writing to memory, and parsing/decoding instructions in order to finally execute them.
+
+There appears to be formatting issues after uploading the files from ISE Design Suite 14.7.
