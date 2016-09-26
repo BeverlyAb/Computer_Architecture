@@ -10,8 +10,8 @@ Date: April 21, 2016
 Implements a program counter (PC) that stores address of next instruction.
 */
 module pc_counter(
-	   output reg [31:0] PC,             // Output of pc_mod
-		input wire [31:0] npc             // Input of pc_mod
+	output reg [31:0] PC,             // Output of pc_mod
+	input wire [31:0] npc             // Input of pc_mod
 );
 
    initial begin
