@@ -12,11 +12,11 @@ It outputs result, later known as aluout, and zero, which is then aluzero for ex
 This handles the logical and arithmetic correspondence.
 */
 module alu(
-    input	wire	[31:0]	a, 		// source from register
-    input	wire	[31:0]	b,			// target from register
-    input	wire	[2:0]		control, // select from alu_control
+    input	wire	[31:0]	a, 	// source from register
+    input	wire	[31:0]	b,	// target from register
+    input	wire	[2:0]	control,// select from alu_control
     output	reg	[31:0]	result,	// goes to MEM Data memory and MEM/WB latch
-    output	wire				zero		// goes to MEM Branch
+    output	wire		zero	// goes to MEM Branch
     );
 	// Based on Lab 3-2 Instruction Operation and ALU control
 	parameter	ALUadd		=	3'b010,
