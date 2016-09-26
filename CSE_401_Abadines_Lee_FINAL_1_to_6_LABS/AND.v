@@ -12,7 +12,7 @@ The output, PCSrc, goes to mux.v from the Fetch Stage. If PCSrc is true, then th
 otherwise there is not.  
 */
 module AND(
-	input		wire	membranch, zero,
+	input	wire	membranch, zero,
 	output	wire	PCSrc
     );
 	
