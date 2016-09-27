@@ -24,24 +24,34 @@ module I_FETCH (
    wire [31:0] npc,npc_mux;
 
    //instantiations
-   mux mux1 (.y(npc_mux), 
-				 .a(EX_MEM_NPC), // .baseClass_var(currentClass_var)
-             .b(npc), 			// a = 1, b = 0
-             .sel(EX_MEM_PCSrc));
+   mux mux1(
+	.y(npc_mux), 
+	.a(EX_MEM_NPC),			// .baseClass_var(currentClass_var)
+        .b(npc), 			// a = 1, b = 0
+        .sel(EX_MEM_PCSrc)
+   	);
                 
-   pc_counter pc_counter1 (.PC(PC), //output
-                   .npc(npc_mux));	//input
+   pc_counter pc_counter1(
+	   .PC(PC), //output
+	   .npc(npc_mux)
+   	);	//input
                    
-   memory memory1 (.data(dataout),	//output
-                   .addr(PC));		//input
+   memory memory1(
+	   .data(dataout),		//output
+           .addr(PC)			//input
+   	);		
                    
-   if_id  if_id1 	(.instr(dataout), 		// inputs
-                   .npc(npc),
-						 .instrout(IF_ID_instr), // outputs
-                   .npcout(IF_ID_npc));
+   if_id  if_id1(
+	   .instr(dataout),		// inputs
+           .npc(npc),
+	   .instrout(IF_ID_instr),	// outputs
+           .npcout(IF_ID_npc)
+   	);
                    
-   incrementer incrementer1 (.pcout(npc), //output
-                             .pcin(PC));	//input
+   incrementer incrementer1(
+	   .pcout(npc), 		//output
+           .pcin(PC)			//input
+   	);	
    initial begin
     //  $display("Time\t PC\t npc\t dataout of MEM\t IF_ID_instr\t IF_ID_npc");
     // $monitor("%0d\t %0d\t %0d\t %b\t %b\t %0d", $time, PC, npc, dataout,IF_ID_instr,IF_ID_npc);
