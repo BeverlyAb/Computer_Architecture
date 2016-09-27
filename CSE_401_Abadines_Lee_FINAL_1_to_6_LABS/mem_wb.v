@@ -9,12 +9,12 @@ Date: May 24th, 2016
 This is the latch that receives signals form all the modules of the memory stage. Its outputs go to mux of WRITE-BACK Stage and FETCH.
 */
 module mem_wb(
-	input		wire	[1:0]		control_wb_in,
-	input		wire	[31:0]	read_data_in, alu_result_in,
-	input		wire	[4:0]		write_reg_in,
-	output	reg				regwrite, memtoreg, //1 bit wire
+	input	wire	[1:0]	control_wb_in,
+	input	wire	[31:0]	read_data_in, alu_result_in,
+	input	wire	[4:0]	write_reg_in,
+	output	reg		regwrite, memtoreg, //1 bit wire
 	output	reg	[31:0]	read_data, mem_alu_result,
-	output	reg	[4:0]		mem_write_reg
+	output	reg	[4:0]	mem_write_reg
     );
 
 initial begin
