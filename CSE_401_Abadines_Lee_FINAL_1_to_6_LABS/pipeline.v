@@ -39,16 +39,16 @@ module pipeline ();
 	
 	//connects between the I_FETCH and I_DECODE modules
 
-	wire[4:0] MEM_WB_rd;		//rd input to register module
-	wire MEM_WB_regwrite;	
-	wire [31:0] WB_mux5_writedata;	//writedata input to register module
-	wire [1:0] wb_ctlout; 		//output of control module (WB)
-	wire [2:0] m_ctlout; 		//output of control module (M)
-	wire regdst; 			//output of control module (EX, regdst)
-	wire alusrc; 			//output of control module (EX, alusrc)
-	wire [1:0] aluop; 		//output of control module (EX, aluop)
-	wire [31:0] npcout, rdata1out, rdata2out, s_extendout;	//outputs of the ID/EX pipeline register
-	wire [4:0] instrout_2016, instrout_1511; 		//outputs of the ID/EX pipeline register
+	wire	[4:0]	MEM_WB_rd;					//rd input to register module
+	wire		MEM_WB_regwrite;	
+	wire 	[31:0]	WB_mux5_writedata;				//writedata input to register module
+	wire 	[1:0]	wb_ctlout; 					//output of control module (WB)
+	wire 	[2:0]	m_ctlout; 					//output of control module (M)
+	wire 		regdst; 					//output of control module (EX, regdst)
+	wire 		alusrc; 					//output of control module (EX, alusrc)
+	wire 	[1:0]	aluop; 						//output of control module (EX, aluop)
+	wire 	[31:0]	npcout, rdata1out, rdata2out, s_extendout;	//outputs of the ID/EX pipeline register
+	wire 	[4:0]	instrout_2016, instrout_1511; 			//outputs of the ID/EX pipeline register
 	
 	IDECODE I_DECODE2(
 		.IF_ID_instrout(IF_ID_instr),		//inputs
@@ -122,7 +122,8 @@ module pipeline ();
 		.mem_Read_data(read_data),		// inputs
 		.mem_ALU_result(mem_alu_result),
 		.MemtoReg(MEM_WB_memtoreg),
-		.wb_data(WB_mux5_writedata)); 		// outputs, goes to I_DECODE
+		.wb_data(WB_mux5_writedata)		// outputs, goes to I_DECODE
+		); 	
 						
 /*	initial begin
       $display("Time\t wb_ctlout\t m_ctlout\t regdst\t aluscr\t aluop\t npcout\t rdata1out\t rdata2out\t s_extendout\t instrout_2016\t instrout_1511\t IF_ID_instr\t ");
