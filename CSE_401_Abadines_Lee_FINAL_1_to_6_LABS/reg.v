@@ -27,35 +27,34 @@ reg [31:0] REG [0:31]; //gives us 32 registers, each 32 bits long
 integer i;
 	
 initial begin
-	    A <= 0;
-	    B <= 0;
+	A <= 0;
+	B <= 0;
 		  
-		  //initialize our 32 registers with the value zero
-		 for (i = 0; i < 32; i = i + 1)
-			    REG[i] <= 0;
-     //display contents of the first 9 reigsters
-     $display("From Register Memory:");
-		 for (i = 0; i < 9; i = i + 1)
-			 $display("\tREG[%0d] = %0d",i,REG[i]);
+	//initialize our 32 registers with the value zero
+	for (i = 0; i < 32; i = i + 1)
+		REG[i] <= 0;
+     		//display contents of the first 9 reigsters
+     		$display("From Register Memory:");
+		for (i = 0; i < 9; i = i + 1)
+			$display("\tREG[%0d] = %0d",i,REG[i]);
 		
-		//Display last register
-		  $display("\t...");
-		  $display("\tREG[%0d] = %0d", 31, REG[31]);
+			//Display last register
+		 	 $display("\t...");
+		  	$display("\tREG[%0d] = %0d", 31, REG[31]);
 	end
 	
 always @ * begin
-      A <= REG[rs];  // Assign the rs index of REG to A ;
-		B <= REG[rt];  // Assign the rt index of REG to B ;
+	A <= REG[rs];  // Assign the rs index of REG to A ;
+	B <= REG[rt];  // Assign the rt index of REG to B ;
 		
-	  	// WRITE data using index rd
-		  if (rd != 0 && regwrite) // 1 is on 
-				REG[rd] <= writedata;
-			
+	// WRITE data using index rd
+	if (rd != 0 && regwrite) // 1 is on 
+		REG[rd] <= writedata;		
 	end
 
 //This Display is used for Lab 6			
 always @ (writedata) begin
-		  $display("\tREG[%0d] = %0d", 1, REG[1]);
+	$display("\tREG[%0d] = %0d", 1, REG[1]);
 	end
 endmodule // register
 
