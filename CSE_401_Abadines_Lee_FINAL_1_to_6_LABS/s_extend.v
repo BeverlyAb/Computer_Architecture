@@ -18,11 +18,11 @@ module s_extend(
     );
 
 	always@ * 
-	  begin
+	begin
 		// Replicate signed bit 16 times then concatinate
 		// EX) {n {m}} , replicates m "n" times
 		// EX) {4'b1001,4'b10x1} , becomes 100110x1   
 		extend <= {{16{nextend[15]}}, nextend};		
-		end
+	end
 
 endmodule
