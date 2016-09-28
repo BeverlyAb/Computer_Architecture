@@ -60,15 +60,14 @@ module control (
 				EX <= 4'b0001;  //why not 4'bZ001
 				M  <= 3'b001;
 				WB <= 2'b0Z;	
-			 end
+			end
 			BEQ: begin
 				EX <= 4'b0010;	// why not 4'bZ010
 				M  <= 3'b100;
 				WB <= 2'b0Z;	
 			end
 			
-			NOP: //Not in Lab Manual, but needed to make life easier for final implementation
-			begin  
+			NOP: begin   //Not in Lab Manual, but needed to make life easier for final implementation
 				EX <={4{1'b0}};  //replicating operator 
 				M  <={3{1'b0}}; 
 				WB <={2{1'b0}};
