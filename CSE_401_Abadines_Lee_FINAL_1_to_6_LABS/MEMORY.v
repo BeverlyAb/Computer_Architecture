@@ -10,15 +10,15 @@ Date: May 24th, 2016
 Memory Stage: This uses the outputs of Execute Stage as well as combining the modules: and, data_memory, and mem_wb.
 */
 module MEMORY(
-	input		wire	[1:0]	wb_ctlout,
-	input		wire		branch, memread, memwrite,
-	input		wire		zero,
-	input		wire	[31:0]	alu_result, rdata2out,
-	input		wire	[4:0]	five_bit_muxout,
-	output	wire			MEM_PCSrc, //from AND gate
-	output	wire			MEM_WB_regwrite, MEM_WB_memtoreg,
-	output	wire	[31:0]		read_data, mem_alu_result,
-	output	wire	[4:0]		mem_write_reg
+	input	wire	[1:0]	wb_ctlout,
+	input	wire		branch, memread, memwrite,
+	input	wire		zero,
+	input	wire	[31:0]	alu_result, rdata2out,
+	input	wire	[4:0]	five_bit_muxout,
+	output	wire		MEM_PCSrc, //from AND gate
+	output	wire		MEM_WB_regwrite, MEM_WB_memtoreg,
+	output	wire	[31:0]	read_data, mem_alu_result,
+	output	wire	[4:0]	mem_write_reg
     );
 
 	// signals
