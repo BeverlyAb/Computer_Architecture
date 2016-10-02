@@ -11,3 +11,5 @@ For the final implementation of the MIPS datapath, mem.v's memory reads from the
 Altogether the pipeline is dynamic. The connections divvies with functionality ranging from iterator through addresses, selecting when to initiate jumps, accessing and writing to memory, and parsing/decoding instructions in order to finally execute them.
 
 There appears to be formatting issues after uploading the files from ISE Design Suite 14.7.
+
+*Feel free to use my work as a reference, but please refrain from copying code to serve as assignments in computer science related courses.* 
