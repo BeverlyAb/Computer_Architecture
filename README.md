@@ -1,6 +1,6 @@
 # Computer_Architecture
 #Introduction: 
-Implements MIPS datapath by simulating a behavioral model written in Verilog.  
+This was a collaborative effort between my lab partner, Kyle Lee, and me as we implemented MIPS datapath by simulating a behavioral model written in Verilog.  
 
 #Pipeline:  
 
