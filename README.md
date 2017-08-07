@@ -1,8 +1,12 @@
-# Computer_Architecture
-#Introduction: 
+## Computer_Architecture
+# Introduction: 
 This was a collaborative effort between my lab partner, Kyle Lee, and me as we implemented MIPS datapath by simulating a behavioral model written in Verilog.  
 
-#Pipeline:  
+I look back at these codes after taking my FPGA Design class and see that there were errors in our semantics. To see better practice of Verilog look at my FPGA Respository, otherwise be cautious about following these codes as examples. 
+The concept is there, but the semantics are inconsistent.
+
+
+# Pipeline:  
 
 Creates instances of the IF,ID, EXECUTE, MEMORY, and WB modules. The EX/MEM address input and the select signal for the multiplexer portion of the IF module will be initialized to 0, while the wires for ID are set based on the overall diagram on  Lab 1-2. 
 
